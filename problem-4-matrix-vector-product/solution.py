@@ -1,0 +1,10 @@
+import numpy as np
+
+
+def solve(A, x):
+    """Implement Matrix-Vector Product from the mathematical contract in README.md."""
+
+    x = np.asarray(x)
+    A = np.asarray(A)
+
+    return x @ A.T
