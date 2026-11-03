@@ -17,5 +17,6 @@ def scaled_dot_product_attention(Q, K, V):
 
     logits = Q @ K.T / np.sqrt(d)
     norm_logits = logits - np.max(logits)
-    dist = (np.exp(norm_logits) / np.sum(np.exp(norm_logits))) @ V
+    exp_logits = np.exp(norm_logits)
+    dist = exp_logits / np.sum(exp_logits) @ V
     return dist
